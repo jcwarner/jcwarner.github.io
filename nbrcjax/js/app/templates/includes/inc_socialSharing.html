@@ -1,0 +1,133 @@
+<style type="text/css">
+	#printable a {
+		background:
+			url(images/print_page.png);
+		border: 0;
+		float: right;
+		display: block;
+		height: 16px;
+		width: 16px;
+		text-indent: -9999px;
+		margin: 1px 3px;
+		padding: 0;
+	}
+	
+	#printable a:hover {
+		background:
+			url(images/print_page.png)
+			!important;
+	}
+	
+	#page_qr a {
+		background:
+			url(images/qr_code.png);
+		border: 0;
+		float: right;
+		display: block;
+		height: 16px;
+		width: 16px;
+		text-indent: -9999px;
+		margin: 1px 3px;
+		padding: 0;
+	}
+	
+	#page_qr a:hover {
+		background:
+			url(images/qr_code.png)
+			!important;
+	}
+	
+	#fb_icon a {
+		background:
+			url(images/icon_facebook.png);
+		background-repeat: no-repeat;
+		border: 0;
+		float: right;
+		display: block;
+		height: 16px;
+		width: 16px;
+		text-indent: -9999px;
+		margin: 1px 3px;
+		padding: 0;
+	}
+	
+	#tw_icon a {
+		background:
+			url(images/icon_twitter.png);
+		background-repeat: no-repeat;
+		border: 0;
+		float: right;
+		display: block;
+		height: 16px;
+		width: 16px;
+		text-indent: -9999px;
+		margin: 1px 3px;
+		padding: 0;
+	}
+	
+	#printable a:hover,#page_qr a:hover,#fb_icon a:hover,#tw_icon a:hover {
+		opacity: .7;
+	}
+</style>
+
+
+<!-- Social Share Buttons BEGIN -->
+
+<div class='social_toolbox addthis_toolbox'	data-text="Check this out">
+	<span id="tw_icon"> 
+		<a href="http://twitter.com/share" class="twitter" title="Share on Twitter"></a>
+	</span> 
+	<span id="fb_icon"> 
+		<a href="https://www.facebook.com/sharer/sharer.php" class="facebook" title="Share on Facebook"></a>
+	</span>
+</div>
+<script type="text/javascript">
+	$(document)
+			.ready(
+					function() {
+						$('.facebook, .twitter')
+								.click(
+										function() {
+											var width = 626, height = 436, u = location.href, t = document.title, left = ($(
+													window).width() - width) / 2, top = ($(
+													window)
+													.height() - height) / 2, text = $(
+													'.social_toolbox')
+													.attr(
+															'data-text')
+													+ ' -', url = '', opts = 'status=1,width='
+													+ width
+													+ ',height='
+													+ height
+													+ ',top='
+													+ top
+													+ ',left='
+													+ left;
+
+											if ($(this).attr(
+													"class") == "facebook") {
+												url = this.href
+														+ '?u='
+														+ encodeURIComponent(u);
+											} else if ($(this)
+													.attr("class") == "twitter") {
+												url = this.href
+														+ '?url='
+														+ encodeURIComponent(u);
+											}
+
+											window.open(url,
+													'sharer', opts);
+											return false;
+										});
+					});
+</script>
+
+<!-- Social Share Buttons END -->
+
+<!-- <span id="page_qr">
+	<a href="https://chart.googleapis.com/chart?chs=300x300&amp;cht=qr&amp;chl=http%3A%2F%2Fnbrcjax%2Eorg%2Fcontent%2Ecfm%3Fid%3D309" rel="lytebox" class="SmallLink" title="Scan to Go Mobile">QR</a> 
+</span>  -->
+<!-- <span id="printable">
+	<a href="page_to_print.cfm?id=309" target="_blank" Class="">[View Printable Page]</a>
+</span>  -->

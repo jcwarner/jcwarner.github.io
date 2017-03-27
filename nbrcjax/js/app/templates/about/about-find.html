@@ -1,0 +1,109 @@
+<div id="marquis_wrap">
+	<div id="sub_flashbox">
+		<img src="images/marquee_howtofindus.jpg" alt="" style="width: 900px; height: 150px;" />
+	</div>
+</div>
+
+<div id="main">
+	<div id="content_sans_sidebar">
+		<h1>How to Find Us</h1>
+		<div id="breadcrumbs">
+			<div ng-include="'js/app/templates/includes/inc_socialSharing.html'" ></div>
+			<a ui-sref="app.home" class="first">Home</a>
+			&raquo; <a ui-sref="app.about" class="x200">About NBRC</a>
+			&raquo; <a ui-sref="app.find" class="active">How to Find Us</a>
+
+		</div>
+		<span style="font-family: Verdana;">
+			<span style="font-size: 12pt;">
+				<strong>
+					Service on Sunday @ 10:30am
+				</strong>
+			</span>
+		</span>
+		<br /> <br /> 
+		<strong>
+			<span style="font-family: Verdana;">
+				<span style="font-size: 12pt;">
+					NBRC Student Ministry: 
+				</span>
+			</span>
+			<span style="font-family: Verdana;">
+				<span style="font-size: 12pt;">
+					Service on Wednesday @ 7:00pm
+				</span>
+			</span>
+		</strong>
+		<br />
+		<a name="top"></a>
+		<p>
+			<a name="top"></a> 
+			<a name="NewBerlinRoadChurch"></a>
+			<font class="ContentSubHeader">New Berlin Road Church</font> 
+			<br /> 
+			2351 New Berlin Rd.<br /> Jacksonville FL 32218<br /> 904-751-6411<br />
+		</p>
+		<style type="text/css">
+			.marker_link:hover {
+				color: #777;
+			}
+		</style>
+
+		<!--- <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+
+		<script type="text/javascript">
+			//<![CDATA[
+
+			if (window.attachEvent) {
+				window.attachEvent('onload', gmap_initialize);
+			} else if (window.addEventListener) {
+				window.addEventListener('load', gmap_initialize, false);
+			} else {
+				document.addEventListener('load', gmap_initialize, false);
+			}
+
+			function gmap_initialize() {
+				var myOptions = {
+					zoom : 13,
+					center : new google.maps.LatLng(30.464700, -81.594053),
+					mapTypeId : google.maps.MapTypeId.ROADMAP
+				};
+				map = new google.maps.Map(document.getElementById("mapDiv"),
+						myOptions);
+				google.maps.event.addListener(map, 'click', function() {
+					infowindow.close();
+				});
+
+				var point = new google.maps.LatLng(30.464700, -81.594053);
+				var marker = createMarker(
+						point,
+						'\r\n<span style=\"color:#666666;font-size:120%;font-weight:bold;\">New Berlin Road Church</span><br /><span style=\"color:#000;\">2351 New Berlin Rd.<br />Jacksonville, FL 32218<br />904-751-6411<br /><form action=\"/web/20131022165234/http://maps.google.com/maps\" method=\"get\" target=\"_blank\"><br /><span class=\"SmallNote\">Enter Address for Directions</span><br /> <input type=\"text\" name=\"saddr\" size=\"30\" /> <input type=\"submit\" value=\"Go\" class=\"smallbutton\" /><input type=\"hidden\" name=\"daddr\" value=\"2351 New Berlin Rd. Jacksonville FL 32218\" /><input type=\"hidden\" name=\"hl\" value=\"en\" /></form></span>\r\n');
+
+			}
+
+			var infowindow = new google.maps.InfoWindow({
+				size : new google.maps.Size(150, 50)
+			});
+
+			function createMarker(latlng, html) {
+				var marker = new google.maps.Marker({
+					position : latlng,
+					map : map
+				});
+				google.maps.event.addListener(marker, 'click', function() {
+					infowindow.setContent(html);
+					infowindow.open(map, marker);
+				});
+			}
+
+			//]]>
+		</script> --->
+
+		<!--- <div id="mapDiv" style="width: 100%; height: 400px; color: #000000;"></div> --->
+	</div>
+
+	<div id="no_sidebar"></div>
+
+</div>
+
+<div class="clear"></div>

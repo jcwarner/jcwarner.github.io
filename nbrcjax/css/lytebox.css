@@ -1,0 +1,119 @@
+
+/* css/lytebox.css */
+
+/* --------- Background Settings ---------*/
+
+#lbOverlay {background-color: #000000; min-height: 100%; width: 100%; position: fixed; top: 0px; left: 0px; z-index: 99998;}
+/* ---#lbOverlay {background: url(../images/lyteboxbg.png); min-height: 100%; width: 100%; position: fixed; top: 0px; left: 0px; z-index: 99998;}--- */
+
+/*----------- Structure -----------*/
+
+#lbMain {position: fixed; left: 0; top: 0; width: 100%; z-index: 99999; text-align: center; line-height: 0px;}
+
+	#lbMain a img {border: none;}
+
+/* ---#lbNote {position:relative;top:-15px;z-index:99999;color:#fff;font-size:70%;}--- */
+#lbNote {position:fixed;top:-55px;left:10px;z-index:99999;color:#fff;font-size:70%;}
+
+#lbOuterContainer {
+	background-color: #fff; 
+	height: 1px; width: 1px;
+	margin: 0px auto;
+	position: relative;
+-webkit-border-top-left-radius: 5px;
+-webkit-border-top-right-radius: 5px;
+-moz-border-radius-topleft: 5px;
+-moz-border-radius-topright: 5px;
+border-top-left-radius: 5px;
+border-top-right-radius: 5px;
+}
+
+#lbDetailsContainer {
+	background-color: #fff;
+	font-size: .75em;  
+	height: 40px; width: 100%; 
+	line-height: 100%; 
+	overflow: hidden; 
+	margin: 0px auto; 
+	position: relative;
+
+-webkit-border-bottom-right-radius: 5px;
+-webkit-border-bottom-left-radius: 5px;
+-moz-border-radius-bottomright: 5px;
+-moz-border-radius-bottomleft: 5px;
+border-bottom-right-radius: 5px;
+border-bottom-left-radius: 5px;
+
+}
+
+#lbImageContainer, #lbIframeContainer {padding: 10px 0 0;}
+
+#lbLoading {
+	background: url(..//images/loading.gif) center no-repeat;
+	height: 24px; width: 100%;
+	line-height: 0px;
+	position: absolute; top: 45%; left: 0%;
+	text-align: center;  
+}
+
+#lbHoverNav {position: absolute; top: 0px; left: 0px; height: 100%; width: 100%; z-index: 10;}
+#lbImageContainer>#lbHoverNav {left: 0px;}
+#lbHoverNav a {outline: none;}
+
+#lbImage {border:none;}
+
+/* -------- Image Name & Details ------------*/
+
+#lbDetailsData {color: #444; font-weight: normal; padding: 0 10px;}
+#lbDetails {width: 60%; float: left; text-align: left;}
+
+
+/* ------- Navigation & Close Buttons ---------*/
+
+#lbPrev2, #lbPrev2_Off {
+	background: url(../images/lytebox_nav.png);
+	display: block;
+	height: 30px; width: 30px;
+	position: absolute; top: 0; right: 80px;
+	text-indent: -9999px;
+}
+	/* Change background of Unavailable State*/
+	#lbPrev2_Off {background: url(../images/lytebox_nav.png) 0 -90px;}
+	
+	#lbPrev2:hover {background: url(../images/lytebox_nav.png) 0 -30px;}
+	#lbPrev2:active {background: url(../images/lytebox_nav.png) 0 -60px;}
+	
+#lbNext2, #lbNext2_Off {
+	background: url(../images/lytebox_nav.png) -30px 0;
+	display: block;
+	height: 30px; width: 30px;
+	position: absolute; top: 0; right: 50px;
+	text-indent: -9999px;
+}
+	/* Change background of Unavailable State*/
+	#lbNext2_Off {background: url(../images/lytebox_nav.png) -30px -90px;}	
+		
+	#lbNext2:hover {background: url(../images/lytebox_nav.png) -30px -30px;}
+	#lbNext2:active {background: url(../images/lytebox_nav.png) -30px -60px;}	
+		
+#lbClose {
+	background: url(../images/lytebox_nav.png) no-repeat -70px 0;
+	width: 30px; height: 30px; 
+	position: absolute; top: 0; right: 10px;
+}
+
+	#lbClose:hover {background: url(../images/lytebox_nav.png) -70px -30px;}
+	#lbClose:active {background: url(../images/lytebox_nav.png) -70px -60px;}	
+		
+		
+/*------ Hidden (for now) -------*/
+
+#lbCaption, #lbNumberDisplay, #lbNavDisplay, #lbPlay, #lbPause {display: none;}
+
+#lbCaption {display: block; font-weight: normal; margin: 5px 0 0 5px;}
+#lbNumberDisplay {float: left; display: block; padding-bottom: 12px;}
+#lbNavDisplay {float: left; display: block; padding-bottom: 12px; width: 80px;}
+#lbPlay {width: 64px; height: 28px; float: right; margin-bottom: 1px;}	
+#lbPause {width: 64px; height: 28px; float: right; margin-bottom: 1px;}
+
+/* css/lytebox.css */

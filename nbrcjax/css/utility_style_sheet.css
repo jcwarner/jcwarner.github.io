@@ -1,0 +1,201 @@
+/*--- css/utility_style_sheet.css ---*/
+
+a:active {outline:none;}
+:focus {-moz-outline-style: none; outline:none;}
+* html a {noFocusLine: expression(this.onFocus=this.blur()); outline: none;}
+::-moz-focus-inner {border:0;padding:0;}
+
+a img {border: 0;} /* remove default border in IE */
+
+.clear {clear: both; height: 1px;}
+.floatright {float:right;}
+.floatleft {float:left;}
+
+/* new clearfix */
+.cfix:before, .cfix:after {content: " "; display: table;}
+.cfix:after {clear: both;}
+
+.inline {display:inline;}
+.inline-block {display:inline-block;zoom:1;*display:inline;}
+
+.alignleft {text-align: left;}
+.alignright {text-align: right;}
+.aligncenter {text-align: center;}
+.alignverticalmiddle {vertical-align: middle;}
+
+/* h1, h2, h3 {line-height:1.1em !important;} */
+.SmallNote {line-height:1em !important;}
+
+.fullwidth {width: 100%;}
+
+.nowrap {white-space: nowrap;}
+
+.layout_borderbox {-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;}
+
+textarea {overflow: auto; vertical-align: top;} /* Remove default vertical scrollbar in IE6/7/8/9 */
+
+.semantic, .contextual {border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px;} /* Visually hidden but available for screenreaders */
+.hidden {display: none !important; visibility: hidden;} /* Hide for both screenreaders and browsers */
+
+/* Display hand cursor for clickable form elements */
+button, input[type="button"], input[type="reset"], input[type="submit"] {cursor: pointer;}
+
+/* Remove default vertical scrollbar in IE6/7/8/9 */
+textarea {overflow: auto; vertical-align: top;}
+
+/* Remove underline from .iconlink container */
+.SmallNavigation, .SmallNavigation:hover {text-decoration: none;}
+.iconlink {margin: 0 2px !important;}
+
+input, select, textarea {-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;}
+input.site_search_field {-moz-box-sizing: content-box; -webkit-box-sizing: content-box; box-sizing: content-box;}
+
+
+/*----- CMS Editor and Notification Classes -----*/
+
+#editorbg>td {background: #fff;}
+#editorbg td {color: #000;}
+
+#help, .help, #error, .error, #success, .success {
+/* ---	border-radius: 4px;--- */
+	margin-bottom: 20px;
+	padding: 10px 12px;
+}
+#help, .help {
+	background: #ffffd9;
+	border: 1px solid #f3f3ba !important;
+	color: #444;
+}
+#help ol, .help ol {list-style-position: inside; margin: 0; padding: 0;}
+#error, .error {
+	background-color: #fbe3e4; 
+	border: 1px solid #f4d2d3 !important; 
+	color: #BB0000;
+}
+#error ul, .error ul {font-size: 11px; list-style-position: inside; margin: 0; padding: 0;}
+#success, .success {
+	background-color: #E6EFC2;
+	border: 1px solid #d5e593 !important;
+	color: #528400;
+}
+
+.table_entry_new {color: #FF0000; font-size: 8px;}
+
+
+/*----- RESPONSIVE COMMON FUNCTIONALITY -----*/
+@media screen and (max-width: 34em) {
+
+	/* Remove non-critical table columns to better fit on small devices */
+	.table_column_hide, .responsive_hide {display: none;}
+	
+	/* Stack items in features filter */
+	.feature_filters {clear: both; overflow: hidden;}
+	.feature_filters form, .feature_filters div {float: left; margin: 10px 0 5px;}
+	.feature_filters hr {clear: both;}
+}
+
+
+/*--------------------------------------------
+  Feature Specific Styles
+--------------------------------------------*/
+
+
+/*----- FILTER PANEL - COMMON STYLES -----*/
+
+.feature_filter_container {margin-bottom: 25px;}
+.feature_filter_toggle {display: inline; margin: 0 0 0 5px;}
+.feature_filters hr {margin: 10px 0;}
+.feature_search_filter {margin: 0 3px 0 0;}
+.feature_search_button {margin: 0;}
+
+
+/*----- RESPONSIVE FORMS - COMMON STYLES -----*/
+
+.SDRequired {line-height: 0;}
+.RequiredFieldLabel .SmallNote {font-weight: normal;}
+
+.smallField {width:100px;}
+.mediumField {width:200px;}
+.largeField {width:400px;}
+
+.responsive ul {clear: both; list-style: none; margin: 0; padding: 0; overflow: auto;}
+.responsive li {margin: 0 0 15px; float:left;}
+.responsive li.form_header, .responsive li.form_clear, .responsive ul.form_group {margin: 0 0 15px; float:none; clear:both;}
+.responsive label {display: block;}
+.responsive label.label_inline {cursor: pointer; display: inline;}
+.responsive input[type="checkbox"] {margin-left: 3px;}
+
+input[type="checkbox"], input[type="radio"] {margin:0 5px 0 0 !important;}
+
+textarea {width:450px;height:150px;}
+		
+/* Makes form stack and become fluid if screen res is < 520px */ 
+@media screen and (max-width: 32.5em) {
+	input, textarea {margin: 0px auto !important; width: 100% !important; padding:10px !important;}
+	select {padding:10px !important;}
+	input[type="checkbox"], input[type="radio"] {width: auto !important;}
+	.responsive li {float: none;}
+	.filters input, .filters select {display: block; float: none; margin-bottom: 15px !important;}
+	.filters input, .filters select {width: 100% !important;}
+	.filters img {display:inline; margin:15px 0;}
+}
+
+
+/*----- METER -----*/
+
+div.score {display: block; white-space: nowrap; width: 175px !important; height: 5px;}
+div.score div {display: block; white-space: nowrap; height: 5px;}
+.badPass div.score div {background-color: #F4715B;}
+.goodPass div.score div {background-color: #EEF042;}
+.strongPass div.score div {background-color: #64FD58;}
+
+
+/*--------------------------------------------
+  Admin Notifications 
+--------------------------------------------*/
+
+#admin_notifications {
+	display: none;
+	list-style: none; 
+	margin: 0; padding: 0;
+	position: fixed; top: 10px; right: 10px;
+	width: 200px;
+	z-index: 9999;
+}
+#admin_notifications li {
+	box-shadow: 0 3px 3px rgba(0,0,0,.1); 
+	font-size: 12px; 
+	line-height: 1.5;
+	margin-bottom: 5px;
+	padding: 10px; 
+	position: relative;
+}
+#admin_notifications .error {
+	background: #CE3622;
+	border: none;
+	color: #fff; 
+}
+/* Should remove from form engine */
+#admin_notifications .close_notification {display: none;}
+#admin_notifications .success {
+	background: #77B400; 
+	border:none;
+	color: #fff;
+}
+#admin_notifications .notify {
+	background: #0077cc; 
+	border: none;
+	color: #fff;
+}
+#admin_notifications .close_all {
+	background: #f9f9f9 url(../images/delete_item.png) no-repeat 170px center;
+	border: 1px solid #e9e9e9;
+	color: #444; 
+	cursor: pointer; 
+	font-weight: bold;
+	padding: 10px 10px 10px 15px;
+}
+#admin_notifications .close_all:hover {color: #006cbf;}
+
+
+/*--- css/utility_style_sheet.css ---*/

@@ -1,0 +1,80 @@
+<div id="flashbox_wrap">
+<link rel="stylesheet" type="text/css" href="css/banner-rotator.css"/>
+<style>.br-effects {overflow: hidden;}</style>
+<script type="text/javascript" src="js/jquery.banner-rotator.min.js"></script>
+<script src="https://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+<script type="text/javascript" src="js/nmUI.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+
+		// Menu Animation
+		nmUI.animateMenu('slideDown', 'fadeIn'); // (topLevelAnimate, subLevelAnimate --> options: slideDown , fadeIn)
+
+		// Global Slide Panel
+		nmUI.slidePanel();
+
+		// Image Links Animation
+		nmUI.animateImageLinks('#interest_buttons li a', '2', '.5', 200); // (imageLinkContainerSelector, imageLinkNestedLevel, imageLinkOpacity, imageLinkTransSpeed)
+
+	});
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+		$('#marquee-rotator-container').bannerRotator({
+			width:900,
+			height:400,
+			//
+			timer:'bar',
+			timerAlign:'bottomRight',
+			navButtons:'large',
+			tooltip:'image',
+			pauseOnHover:true,
+			thumbnails:'bullet',
+			playButton:false,
+			cssTransition:false,
+			
+			cpanelOnHover:true,
+			selectOnHover:false,
+			navButtonsOnHover:true
+	  	});
+   	}
+);
+</script>
+
+<div id="flashbox" style="width:900px;height:400px;overflow:hidden;">
+	
+		<div id="marquee-rotator-container" class="banner-rotator">
+			<ul>						
+				<li  data-effect="fade" data-delay="6000">
+                	<a href="images/he_is_risen_full.jpg">
+                		<img src="images/he_is_risen.jpg"/>
+                	</a>
+				</li>
+			
+				<li  data-effect="fade" data-delay="6000">
+                	<a href="images/nbrc_website_marquee_newsite_full.jpg">
+                		<img src="images/nbrc_website_marquee_newsite.jpg"/>
+                	</a>
+				</li>
+			
+				<li data-link="http://nbrcjax.nextmeta.com/content.cfm?id=308&le=1" data-target="_self"  data-effect="fade" data-delay="6000">
+                	<a href="images/nbrc_website_marquee_firebible_full.jpg">
+                		<img src="images/nbrc_website_marquee_firebible.jpg"/>
+                	</a>
+				</li>							
+		    </ul>
+		</div>	
+	</div>
+</div>
+<div id="interest_buttons_ns">		
+	<table border="0" cellpadding="1" cellspacing="1" style="width:100%">
+	<tbody>
+		<tr>
+			<td style="text-align: left;"><a ui-sref="app.ministries" style="text-decoration: underline;"><img alt="" src="images/media_1.jpg" style="height:156px; width:201px" /></a></td>
+			<td style="text-align: center;"><a ui-sref="app.adult" style="text-decoration: underline;"><img alt="" src="images/bible_study.jpg" style="height:156px; width:197px" /></a></td>
+			<!-- <td style="text-align: center;"><a href="http://nbrcjax.sermon.net/main/main/9977756" style="text-decoration: underline;"><img alt="" src="images/media_5.jpg" style="height:155px; width:227px" /></a></td> -->
+			<td style="text-align: right;"><img alt="" src="images/online_giving_2.jpg" style="height:156px; width:175px" /></td>
+			</tr>
+		</tbody>
+	</table>		
+</div>

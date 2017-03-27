@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" ng-app="nbrcjax">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title ng-bind="title">New Berlin Road Church | Home</title>
+		
+		<link rel="stylesheet" href="css/utility_style_sheet.css" type="text/css" />
+		<link rel="stylesheet" href="css/style_sheet.css" type="text/css" />
+
+		<link rel="stylesheet" href="css/lytebox.css" media="screen" />
+		<script src="js/lytebox.js" type="text/javascript"></script>
+
+		<script src="js/utils.js" type="text/javascript"></script>
+		<script src="js/ajax.js" type="text/javascript"></script>
+		<script src="js/boxover.js" type="text/javascript"></script>
+		<script src="js/flashobject.js" type="text/javascript"></script>
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+		<script type="text/javascript">
+			$(document)
+					.ready(
+							function() {
+								var documentHeight = $(document).height();
+								$("html")
+										.append(
+												'<div class="back-to-top"><img style="width: 30px;" src="images/backtotop.png" /></div>');
+								$(".back-to-top").css({
+									"display" : "none",
+									"position" : "fixed",
+									"right" : "20px",
+									"bottom" : "20px",
+									"z-index" : "9999",
+									"padding" : "10px",
+									"cursor" : "pointer"
+								});
+								$(window).scroll(function() {
+									var scrollPos = $(window).scrollTop();
+									if (scrollPos > 300)
+										$(".back-to-top").fadeIn(150);
+									else
+										$(".back-to-top").fadeOut(150)
+								});
+								$(".back-to-top").click(function() {
+									$("html, body").animate({
+										scrollTop : 0
+									}, 500);
+									return false
+								})
+							});
+		</script>
+
+		<meta property="og:site_name" content="New Berlin Road Church" />
+		
+		<meta property="og:image" content="/images/logo.png?t=896660" />
+		
+		<meta property="og:title" content="New Berlin Road Church | Home" />
+		
+		<meta property="og:url" content="/index.cfm?id=135" />
+		
+		<link rel="shortcut icon" href="favicon.ico" />
+	</head>
+	<body>
+		<a href="litesite.cfm" style="position: absolute; left: -9999em;">
+			View Screen-Reader Accessible Site
+		</a>
+
+		<div id="toppanel">	
+			<div id="panel">	
+				<div id="panel_content" class="clearfix">	
+					<div id="panel_module1">	
+						<a id="stream_view_all" href="content.cfm?page_content=calendar_include.cfm">More &#187;</a>
+						<h2>Upcoming Events</h2>
+						<div>	
+							<ul id="sitestream_list">
+								<!-- TODO list out calendar items -->
+								<!-- 	<li class="first">
+							<a href="content.cfm?page_content=calendar_include.cfm&amp;event_id=10&amp;mm=1&amp;dd=2&amp;yy=2014">
+							
+							Jan 02&nbsp;&nbsp;|&nbsp;&nbsp;<span class="list_title">&#8226; NBRC Thursday Night Service</span>
+							
+							</a>
+							</li> -->	
+							</ul>	
+						</div>	
+					</div>	
+					<div id="panel_module3">	
+						<p>	
+							New Berlin Road Church
+							<br /> 
+							2351 New Berlin Road
+							<br />
+							Jacksonville, Florida 32218	
+						</p>	
+					</div>
+					<!--- Figure out search and login
+					<div id="panel_module4">
+						<!-- TODO: Figure out local search
+						<h2>Search</h2>
+	
+						<form class="site_search" action="content.cfm?page_content=search_include.cfm" method="post">
+							<fieldset class="no_border">
+							<input name="key_words" value="Search" onfocus="if(this.value=='Search')this.value=''" onblur="if(this.value=='')this.value='Search'" class="smallinput" x-webkit-speech="" x-webkit-grammar="builtin:search" />
+							<input class="smallbutton" value="Search" type="submit" />
+							</fieldset>
+						</form>
+	
+						<hr/>
+	
+						<h2>Login</h2>
+	
+						
+						
+						<a href="content.cfm?page_content=login_include.cfm">Login</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="content.cfm?page_content=member_register_include.cfm">Register</a>
+	
+					</div> -->	
+				</div>	
+			</div>	
+		</div>	
+		<div id="toggle_bar">	
+			<div id="toggle_wrapper">	
+				<div id="toggle">
+					<a id="open" class="open" href="javascript:void(null)"></a> 
+					<a id="close" style="display: none;" class="close" href="javascript:void(null)"></a>
+				</div>	
+			</div>	
+		</div>
+		<div id="container">	
+			<div id="header">
+				<h1>
+					<a ui-sref="app.home" id="logo" title="">New Berlin Road Church</a>
+				</h1>
+			</div>
+	
+			<div id="wrapper" runResize="{{ runResize }}">	
+				<div id="info_bar">	
+					<div id="navbar">
+						<ul class="menu">
+							<li class="firstlevel first ">
+								<a ui-sref="app.home" ui-sref-active="active" class="cssnavlevelone first">
+									<img src="images/shim.gif" width="1" alt="" class="cssnavlevelone" />
+									<img class="navimg" src="images/Home.png" alt="Home" />
+									<span>Home</span>
+								</a>
+							</li>
+							<li class="firstlevel ">
+								<a ui-sref="app.about" ui-sref-active="active" class="x200 cssnavlevelone">
+									<img src="images/shim.gif"	width="1" alt="" class="cssnavlevelone" />
+									<img class="navimg"	src="images/About_NBRC.png" alt="About NBRC" />
+									<span>About NBRC</span> 
+								</a>
+								<ul>
+									<li class=" first ">
+										<a ui-sref="app.find" ui-sref-active="active" class="x266">How to Find Us </a>
+									</li>
+									<li class=" ">
+										<a ui-sref="app.believe" ui-sref-active="active" class="x296">What We Believe </a>
+									</li>
+									<li class=" last">
+										<a ui-sref="app.staff" ui-sref-active="active" class="x309">Meet Our Staff <b>&#187;</b></a>
+										<ul>
+											<li class=" first ">
+												<a ui-sref="app.seniorpastor" ui-sref-active="active" class="x311">Matthew Meadows </a>
+											</li>
+											<!-- <li class=" ">
+												<a ui-sref="app.worshipleader" ui-sref-active="active" class="x312">
+													Karen Davis 
+												</a>
+											</li> -->
+											<li class=" last">
+												<a ui-sref="app.visionteam" ui-sref-active="active"	class="x313">Vision Team </a>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+							<li class="firstlevel ">
+								<a ui-sref="app.ministries" ui-sref-active="active" class="x148 cssnavlevelone">
+									<img src="images/shim.gif" width="1" alt="" class="cssnavlevelone" />
+									<img class="navimg" src="images/Our_Ministries.png" alt="Our Ministries" />
+									<span>Our Ministries</span> 
+								</a>
+								<ul>
+									<li class=" first ">
+										<a ui-sref="app.adult" ui-sref-active="active" class="x298">
+											Adult Ministries 
+										</a>
+									</li>
+									<li class=" ">
+										<a ui-sref="app.worship" ui-sref-active="active" class="x306">
+											Worship Ministry 
+										</a>
+									</li>
+									<li class=" ">
+										<a ui-sref="app.youth" ui-sref-active="active" class="x299">
+											NBRC Student Ministry <b>&#187;</b>
+										</a>
+										<ul>
+											<li class=" first last">
+												<a href="http://www.facebook.com/groups/205601512814542/" target=_blank; class="x315">
+													NBRC SM Facebook 
+												</a>
+											</li>
+										</ul>
+									</li>
+									<li class=" last">
+										<a ui-sref="app.children" ui-sref-active="active" class="x300">
+											Kids&#39; Connection <b>&#187;</b>
+										</a>
+										<ul>
+											<li class=" first ">
+												<a ui-sref="app.servantschedule" ui-sref-active="active" class="x314">
+													Childcare Servant Schedule 
+												</a>
+											</li>
+											<li class=" last">
+												<a href="http://www.facebook.com/groups/301942999822803/" target=_blank; class="x316">
+													Kids&#39; Connection Facebook 
+												</a>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+							<li class="firstlevel ">
+								<a href="javascript:void(null)" style="cursor: default;" class="x245 cssnavlevelone">
+									<img src="images/shim.gif" width="1" alt="" class="cssnavlevelone" />
+									<img class="navimg" src="images/Upcoming_Events.png" alt="Upcoming Events" />
+									<span>Upcoming Events</span> 
+								</a>
+								<ul>
+									<li class=" first ">
+										<a ui-sref="app.calendar" ui-sref-active="active" class="x102">
+											NBRC Calendar
+										</a>
+									</li>
+									<li class=" last">
+										<a ui-sref="app.annoucement" ui-sref-active="active" class="x133">
+											NBRC Announcements 
+										</a>
+									</li>
+								</ul>
+							</li>
+							<!-- <li class="firstlevel ">
+								<a href="http://sermon.net/nbrcjax" class="x213 cssnavlevelone">
+									<img src="images/shim.gif" width="1" alt="" class="cssnavlevelone" />
+									<img class="navimg" src="images/Our_Podcast.png" alt="Downloads" />
+									<span>Our Podcast</span> 
+								</a>
+							</li> -->
+							<li class="firstlevel last">
+								<a ui-sref="app.contact" ui-sref-active="active" class="x150 cssnavlevelone">
+									<img src="images/shim.gif" width="1" alt="" class="cssnavlevelone" />
+									<img class="navimg" src="images/Contact_NBRC.png" alt="Contact NBRC" />
+									<span>Contact NBRC</span> 
+								</a>
+							</li>	
+						</ul>
+					</div>
+				</div>
+				<div id="mainContent" data-ui-view="mainContent"></div>
+			</div>
+		</div>
+	
+		<div id="footer">
+			<address class="vcard">
+				&copy;&nbsp;Copyright 2012,&nbsp;
+				<a ui-sref="app.home" class="url fn org">New Berlin Road Church</a>
+				<br /> 
+				<span class="adr"> 
+					<span class="street-address">
+						2351 New Berlin Rd.
+					</span>
+					<br /> 
+					<span class="locality">
+						Jacksonville
+					</span>
+					,&nbsp;
+					<abbr class="region">FL</abbr>
+					&nbsp;
+					<span class="postal-code">32218</span>
+					<br />
+				</span>
+			</address>
+
+			<div id="design_credit">
+				<ul id="social_media_links_list">
+					<li>
+						<a href="http://www.facebook.com/newberlinroadchurch" onclick="target='_blank'" class="social_facebook">
+							<img src="images/icon_facebook.png" alt="Facebook" />
+						</a>
+					</li>
+					<li>
+						<a href="http://www.twitter.com/newberlinroad" onclick="target='_blank'" class="social_twitter">
+							<img src="images/icon_twitter.png" alt="Twitter" />
+						</a>
+					</li>
+					<li>
+						<a href="http://www.youtube.com/user/NewBerlinRoadChurch" onclick="target='_blank'" class="social_youtube">
+							<img src="images/icon_youtube.png" alt="YouTube" />
+						</a>
+					</li>
+					<!-- <li>
+						<a href="https://chart.googleapis.com/chart?chs=300x300&amp;cht=qr&amp;chl=http%3A%2F%2Fnbrcjax%2Eorg%2Findex%2Ecfm%3Fid%3D135" rel="lytebox" title="Scan to Go Mobile" class="social_site_level_qr_code">
+							<img src="images/icon_qr.png" alt="QR" />
+						</a>
+					</li> -->
+				</ul>
+			</div>
+			<div class="clear"></div>
+		</div>
+		<script type="text/javascript" src="js/angular.js"></script>
+		<script type="text/javascript" src="js/angular-route.js"></script>
+		<script type="text/javascript" src="js/angular-ui-router.js"></script>
+		<script type="text/javascript" src="js/angular-animate.min.js"></script>
+		<script type="text/javascript" src="js/app/app.js"></script>
+		<script type="text/javascript" src="js/app/routes.js"></script>
+		<script type="text/javascript" src="js/app/controller/base-controller.js"></script>
+		<script type="text/javascript" src="js/app/controller/home-controller.js"></script>
+		<script type="text/javascript" src="js/app/controller/about-controller.js"></script>
+		<script type="text/javascript" src="js/app/controller/ministries-controller.js"></script>
+		<script type="text/javascript" src="js/app/controller/events-controller.js"></script>
+		<script type="text/javascript" src="js/app/controller/contact-controller.js"></script>
+	</body>
+</html>

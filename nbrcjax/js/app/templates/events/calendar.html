@@ -1,0 +1,25 @@
+<div id="marquis_wrap">
+	<div id="sub_flashbox">
+		<img src="images/marquee_nbrccalendar.jpg" alt="" style="width: 900px; height: 150px;" />
+	</div>
+</div>
+
+<div id="main">
+	<div id="content_sans_sidebar">
+		<h1>NBRC Calendar</h1>
+		<div id="breadcrumbs">
+			<div ng-include="'js/app/templates/includes/inc_socialSharing.html'" ></div>
+			<a ui-sref="app.home" class="first">Home</a>
+			&raquo; <a href="javascript:void(null)" class="x245" style="cursor: default">Upcoming Events</a>
+			&raquo; <a ui-sref="app.calendar" class="active">NBRC Calendar</a>
+		</div>
+		
+		<div id="ajaxCal">
+			<div id="calendar_container">
+				<iframe ng-src="{{calUrl}}" style="width:100%; height: 500px;"></iframe>
+			</div>			
+		</div>
+	</div>
+	<div id="no_sidebar"></div>
+</div>
+<div class="clear"></div>

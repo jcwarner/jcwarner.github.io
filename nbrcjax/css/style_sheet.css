@@ -1,0 +1,541 @@
+
+/*------------- Design #806 --------------
+
+..............................COLOR LEGEND
+
+Link Color ........................ d4ab42
+Main Text Color ................... 666
+
+----------------------------------------*/
+
+/*--------------------------------------------------
+------------------  Reset   ------------------------
+--------------------------------------------------*/
+ 
+a:active {outline:none;}
+:focus {-moz-outline-style: none; outline:none;}
+* html a {noFocusLine: expression(this.onFocus=this.blur()); outline: none;}
+
+img {border:none;}
+
+
+/*--------------------------------------------------
+------------------ Global Styles -------------------
+--------------------------------------------------*/
+body, html {height: auto; width: 100%; margin: 0; padding: 0;}
+
+body {
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+	font-size: 100%;
+	line-height: 1.375em;
+	color: #444;
+	word-wrap: break-word;
+}
+
+html {background: #1d241c url(../images/html_bg.jpg);}
+
+a {color: #d4ab42; font-weight: bold; text-decoration: none;}
+a:hover {text-decoration: underline;}
+
+address {font-style: normal;}
+
+h1, .ContentHeader {font-size: 2em; color: #000;}
+h2, .ContentSubHeader {font-size: 1.5em; color: #000; .line-height: 1.2em;}
+h3 {font-size: 1.25em; color: #d4ab42;}
+
+.HRule, hr {height: 1px; background: #eee; color: #eee; border: none; margin: 20px 0;}
+
+.clear {clear:both; height: 0; margin: 0; padding: 0;}
+.floatleft {float: left;}
+.floatright {float: right;}
+.hidden {visibility: hidden; position: absolute;}
+
+
+/*--------------------------------------------------
+--------------- Structure - Home -------------------
+--------------------------------------------------*/
+.ng-scope{
+    height: auto;
+}
+#container {background: #fff url(../images/container_bg.jpg) repeat-x; font-size: .75em; height: auto; width: 100%; margin: -30px 0 0;}
+#header {height: 130px; width: 900px; margin: 0 auto;}
+#navbar {height: 0; width: 900px;}
+#wrapper {height: auto; width: 900px; margin: 0 auto;}
+#info_bar {height: 50px; width: 900px; position: relative; z-index: 9998;}
+#flashbox_wrap {background: #fff; height: 400px; width: 900px; margin: 0; overflow: hidden;}
+#interest_buttons {height: 140px; width: 900px; margin: 0; padding: 0;}
+	#interest_buttons_ns {height: auto; width: 900px; padding: 20px 0;}
+#footer {color: #fff; font-size: 12px; height: 200px; width: 900px; margin: 0 auto; padding: 20px 0 0;}
+
+#marquis_wrap {height: auto; width: 900px; margin: 0;}
+#main {float: left; height: auto; width: 900px; margin: 20px 0;}
+#content {border-left: #e9e9e9 1px dashed; float: right; height: auto; width: 590px; line-height: 1.7; padding-left: 20px;}
+	#content_sans_sidebar {float: left; height: auto; width: 900px; line-height: 1.7;}
+#sidebar {float: left; height: auto; width: 270px; line-height: 1.7;}
+	#no_sidebar {display: none;}
+	
+#breadcrumbs {
+	background: #fff;
+	border: #eee 1px solid;
+	color: #ccc;
+	min-height: 20px;
+	height: auto !important;
+	height: 20px;
+	margin: 0 0 20px;
+	padding: 10px;
+}
+
+
+
+/*--------------------------------------------------
+------------------ Header ------------------------
+--------------------------------------------------*/
+
+#header h1 {margin: 0;}
+
+#logo {
+background: url(../images/logo.png) no-repeat;
+display: inline;
+height: 115px;
+width: 280px;
+margin: 0px 0 0 0;
+position: absolute;
+text-indent: -9999px;
+}
+
+#info1 {height: 20px; width: 260px; overflow: hidden; position: absolute; right: 0; top: 14px; text-align: right;}
+
+
+/*--------------------------------------------------
+------------------ CSS MENU ------------------------
+--------------------------------------------------*/
+
+/* standard menu setup */
+.menu, .menu ul {z-index:1999; list-style-type:none; padding:0px; margin:0px; text-align:left; position:relative;}
+.menu {margin-left:0px;}
+.menu li {float:left;}
+.menu ul li {clear:both; display:block;}
+.menu li ul {display:none;}
+.menu li:hover>ul {display:block; position:absolute;}
+
+/* first level styling (".menu ul a" for vertical | ".menu a" for horizontal) */
+.menu a {padding-right:55px; margin:0px; display:block; text-decoration: none; font-weight: bold; font-size: 18px;color:#777;}
+.menu a.firstsubitem {border-top:0px;}
+
+/* first level vertical centering */
+.menu .cssnavlevelone {height:50px;vertical-align:middle;}
+img.cssnavlevelone {border:none;}
+
+/* submenu colors/style */
+.menu li ul li a {padding: 5px 10px 5px; background:#fff; font-weight:normal; width:150px; font-size: 12px; border-top: 1px #eee solid;}
+.menu li ul li:first-child>a {border-top:none;}
+.menu li ul li a.active {color: #d4ab42;}
+
+/* first level sub menu container */
+.menu {border:none;}
+/* 2nd level sub menu container (needs nothing if horizontal) */
+.menu li ul {background:#fff; padding:6px; border: 1px solid #ddd;}
+/* 3rd+ level sub menu container */
+.menu li ul li ul {margin-left:120px; margin-top:-20px;}
+
+/* first level rollovers */
+#navbar li:hover>a {color:#d4ab42; background: #fff;}
+
+/* submenu rollovers (if desired) */
+#navbar li ul li:hover>a {color:#d4ab42; background: #fff;}
+
+/* ------- Graphic Menu ------*/
+
+#navbar a.cssnavlevelone {position:relative;height:50px;overflow:hidden;display:block}
+#navbar .navimg {position:relative;}
+#navbar .firstlevel:hover>a.cssnavlevelone img, .firstlevel:hover>a.first img {top:-50px;}
+
+/* active states */
+#navbar a.active img {top:-100px;}
+
+/* --- don't show ie6 text --- */
+#navbar span {display:none;}
+
+/* --- IE6 undo graphic menu --- */
+* html #navbar .navimg {display:none;}
+* html #navbar span {display:inline;}
+* html #navbar a.cssnavlevelone {overflow:visible; padding:0px 10px;}
+
+
+/*---------- ie6 MAIN MENU hacks -----------*/
+* html .menu {display:inline-block;}
+* html .menu li a {display:block;float:left;}
+* html .menu table a {border:0px;}
+* html .menu li ul {display:block;position:absolute;visibility:hidden;}
+
+* html .menu iframe {position:absolute; left:-9999px; top:-9999px; border:0px; width:0px; height:0px; margin:0px; padding:0px; list-style:none;display:none;visibility:hidden;}
+
+/* correct position issue */
+* html .menu li a table {position:relative;left:-9px;top:-1px;}
+* html .menu li a table li a table {position:relative;left:-12px;top:9px;}
+
+/* correct table border issue */
+* html .menu table {border-collapse:collapse;}
+
+/* first level rollovers (".menu" for vertical | "#navbar" for horizontal) */
+* html #navbar a:hover {background:url("/images/overbgimage.jpg") no-repeat; color:#d4ab42; text-decoration: none;}
+
+/* sub level rollovers (if desired) */
+* html #navbar table a:hover {background: url("/images/overbgimage.jpg") no-repeat #eee; text-decoration: none;}
+* html .menu li ul li a {font-size:8pt;}
+
+/* enter as many levels as you wish to support */
+* html .menu a:hover ul ul {visibility:hidden;}
+* html .menu a:hover table table iframe {visibility:hidden;}
+* html .menu a:hover ul a:hover ul ul {visibility:hidden;}
+* html .menu a:hover ul ul a:hover table table iframe {visibility:hidden;}
+* html .menu a:hover ul a:hover ul a:hover ul ul {visibility:hidden;}
+* html .menu a:hover ul a:hover ul a:hover table table iframe {visibility:hidden;}
+* html .menu a:hover ul a:hover ul a:hover ul a:hover ul ul {visibility:hidden;}
+* html .menu a:hover ul a:hover ul a:hover ul a:hover table table iframe {visibility:hidden;}
+* html .menu a:hover ul a:hover ul a:hover ul a:hover ul a:hover ul ul {visibility:hidden;}
+* html .menu a:hover ul a:hover ul a:hover ul a:hover ul a:hover table table iframe {visibility:hidden;}
+* html .menu a:hover ul a:hoverul a:hover ul a:hover ul a:hover ul a:hover ul ul {visibility:hidden;}
+* html .menu a:hover ul a:hoverul a:hover ul a:hover ul a:hover ul a:hover table table iframe {visibility:hidden;}
+* html .menu a:hover ul a:hover ul a:hoverul a:hover ul a:hover ul a:hover ul a:hover ul ul {visibility:hidden;}
+* html .menu a:hover ul a:hover ul a:hoverul a:hover ul a:hover ul a:hover ul a:hover table table iframe {visibility:hidden;}
+
+* html .menu a:hover ul {visibility:visible;z-index:2000;}
+* html .menu a:hover table iframe {left:expression(this.nextSibling.offsetLeft);top:expression(this.nextSibling.offsetTop);width:expression(this.nextSibling.offsetWidth);height:expression(this.nextSibling.offsetHeight); filter:alpha(opacity=0);display:block;visibility:visible;}
+* html .menu a:hover ul a:hover ul {visibility:visible;}
+* html .menu a:hover ul a:hover table iframe {left:expression(this.nextSibling.offsetLeft);top:expression(this.nextSibling.offsetTop);width:expression(this.nextSibling.offsetWidth);height:expression(this.nextSibling.offsetHeight); filter:alpha(opacity=0);display:block;visibility:visible;}
+* html .menu a:hover ul a:hover ul a:hover ul {visibility:visible;}
+* html .menu a:hover ul a:hover ul a:hover table iframe {left:expression(this.nextSibling.offsetLeft);top:expression(this.nextSibling.offsetTop);width:expression(this.nextSibling.offsetWidth);height:expression(this.nextSibling.offsetHeight); filter:alpha(opacity=0);display:block;visibility:visible;}
+* html .menu a:hover ul a:hover ul a:hover ul a:hover ul {visibility:visible;}
+* html .menu a:hover ul a:hover ul a:hover ul a:hover table iframe {left:expression(this.nextSibling.offsetLeft);top:expression(this.nextSibling.offsetTop);width:expression(this.nextSibling.offsetWidth);height:expression(this.nextSibling.offsetHeight); filter:alpha(opacity=0);display:block;visibility:visible;}
+* html .menu a:hover ul a:hover ul a:hover ul a:hover ul a:hover ul {visibility:visible;}
+* html .menu a:hover ul a:hover ul a:hover ul a:hover ul a:hover table iframe {left:expression(this.nextSibling.offsetLeft);top:expression(this.nextSibling.offsetTop);width:expression(this.nextSibling.offsetWidth);height:expression(this.nextSibling.offsetHeight); filter:alpha(opacity=0);display:block;visibility:visible;}
+* html .menu a:hover ul a:hover ul a:hover ul a:hover ul a:hover ul a:hover ul {visibility:visible;}
+* html .menu a:hover ul a:hover ul a:hover ul a:hover ul a:hover ul a:hover table iframe {left:expression(this.nextSibling.offsetLeft);top:expression(this.nextSibling.offsetTop);width:expression(this.nextSibling.offsetWidth);height:expression(this.nextSibling.offsetHeight); filter:alpha(opacity=0);display:block;visibility:visible;}
+
+
+/*--------------------------------------------------
+---------------   Interest Buttons   --------------------
+--------------------------------------------------*/
+	
+#interest_buttons li {list-style: none; display: inline; margin: 0; padding: 0;}
+
+#interest_button1, #interest_button2, #interest_button3, #interest_button4 {display: block; float: left; height: 140px; width: 225px; text-indent: -9999px;}
+
+#interest_button1 {background: url(../images/interest_buttons.png) 0 0;}
+#interest_button2 {background: url(../images/interest_buttons.png) -225px 0;}
+#interest_button3 {background: url(../images/interest_buttons.png) -450px 0;}
+#interest_button4 {background: url(../images/interest_buttons.png) -675px 0;}
+
+
+/*--------------------------------------------------
+------------------ Footer ------------------------
+--------------------------------------------------*/
+
+#footer address {float: left;}
+#design_credit {float: right; text-align: right;}
+
+#social_media_links_list {display: block; list-style: none; margin: 0; padding: 0;}
+#social_media_links_list li {float: right;}
+#social_media_links_list li a {padding-left: 7px;}
+
+#fc_link {clear: both; display: block; float: right;}
+
+
+/*--------------------------------------------------
+------------------ Calendar ------------------------
+--------------------------------------------------*/
+
+/* ----------- CSS Tooltip ------------*/
+a.tt {position: relative; text-decoration: none;}
+a.tt span.tooltip {display: none;}
+a.tt:hover span.tooltip {
+    background: #fff;
+    border: 2px solid #eee;
+    border-radius: 5px;
+    display: block;
+    padding: 5px;
+    position: absolute;
+    text-align: left;
+    top: 15px; left: 15px;
+    width: 200px;
+    z-index: 101;
+}
+/* ----------- JS Tooltip ------------*/
+.boxoverbody {
+    background: #fff;
+	border: 2px solid #eee;
+	border-radius: 5px;
+	display: inline-block;
+	font-size: .75em;
+    padding: 10px 15px;
+	width: 200px;
+}
+
+.CalOverTitle {font-weight: bold; color: #d4ab42;}
+
+/* ----------- Mini Cal Styles ------------*/
+
+#calendartable {border-collapse: collapse;}
+#calendartable td a {display: block; height: 30px; text-align: center;}
+#calendartable td a:hover {background: #eee; z-index: 1;}
+#calendartable .emptyday a:hover {background: transparent;}
+
+#calnav {margin: 0 0 10px;}
+
+/* ----------- MAIN Cal Styles ------------*/
+
+#mainCal {border-collapse: collapse; clear: both;}
+#mainCal td {border-collapse: collapse; font-size: 11px; padding: 5px 10px; width: 14%; vertical-align: top;}
+#mainCal td:hover {box-shadow: 0 0 10px rgba(0,0,0,.1); z-index: 99; position: relative; *position: static; *z-index: 0;}
+
+#mainCal .ToDay A:HOVER, #mainCal .WeekDay A:HOVER, #mainCal .WeekendDay A:HOVER {color: #333; z-index: 1;}
+
+/* ----------- Inside Each Day ------------*/
+
+img.caldot {border: 0px; padding-right: 2px; vertical-align: middle;}
+.calEventName {margin-bottom: 10px; line-height: 1.25 !important;}
+
+.ToDay {background: #fff; border: 1px solid #eee; border-top: none; *border-top: 1px solid #eee; box-shadow: inset 0 0 20px #eee;}
+.WeekendDay, .WeekDay {background: #fff; border: 1px solid #eee; border-top: none; *border-top: 1px solid #eee;}
+.emptyday, .EmptyDay {border: 1px solid #eee; border-top: none; *border-top: 1px solid #eee;}
+
+.CalendarDayNumber, .CalendarCurrentDayNumber  {color: #222; font-weight: normal;}
+
+.ColumnHeader {color: #fff; background: #222; font-weight: bold; padding: 5px;}
+
+.SmallNote {font-style: italic; font-size: 80%;}
+
+
+/*--------------------------------------------------
+-------------- 6. GLOBAL FRONT END -----------------
+--------------------------------------------------*/
+
+#pagination a {
+	border: 1px solid #eee; 
+	line-height: 2em; 
+	padding: 3px 5px; 
+	text-decoration:none;
+}
+#pagination a:hover {background: #eee; border: 1px solid #eee;}
+#pagination .OnPageNumber {border: 1px solid transparent; color: #444;}
+
+form {margin: 0px; padding: 0px;}
+input, select, textarea {
+	border: 1px solid #ddd;
+	margin: 0 5px 10px 0;
+	padding: 4px;
+	vertical-align: middle;
+}
+
+	input:focus, select:focus, textarea:focus {border: 1px solid #d4ab42;}
+
+.PicOff {border: 5px solid #eee; margin: 5px; vertical-align: middle;}
+.PicOn {border: 5px solid #d4ab42; margin: 5px; vertical-align: middle;}
+
+.GraphBar {background: #d4ab42; margin: 0 10px;}
+
+.RequiredFieldLabel {font-weight: bold;}
+
+a.accordion_header {font-size: 1em !important;}
+#responsive_agenda {display: none;} /* keep agenda from displaying in IE8 */
+
+th {font-weight: normal;}
+table td.top, table th.top, #mainCal td {vertical-align:top;}
+table.contentTable, table.itemTable {width:100%;border-collapse:collapse;} 
+.contentTable td, .itemTable td {border-bottom: 1px solid #eee; text-align: left;}
+.contentTable th {color: #444; border-bottom: 2px solid #eee; text-align: left;}
+.contentTable th strong, .itemTable th strong {font-size: 100%;}
+.contentTable th span {font-size: 100%; font-weight: normal;}
+.contentTable td, .contentTable th, .itemTable td, .itemTable th {padding: 5px;}
+.itemTable th {border-bottom: 1px solid #eee;color: #444;padding-right: 20px;text-align: right;width: 100px;}
+.contentTable tr:hover td {background:url(../images/datahoverbg.png)}
+.itemTable td, .itemTable th, .contentTable td, .contentTable th {vertical-align:middle;}
+.itemTable tr.last td, .contentTable tr.last td, .itemTable tr.last th, .contentTable tr.last th {border-bottom:none;}
+table td.center, table th.center {text-align:center;}
+table td.right, table th.right {text-align:right;}
+.tdcheckbox {width:75px;text-align:center;}
+ 
+fieldset {
+ border:1px solid #eee;
+ padding:0px 15px 15px 15px;margin:20px 0;
+}
+fieldset legend {color: #444; font-size: 100%;}
+
+.borderbox {border: 1px solid #eee; padding: 5px;}
+.iconlink {margin: 0 5px;}
+
+.submitbutton, .smallbutton, .smallselect, .smallinput {
+	background: #fff url(../images/buttonbg.jpg) repeat-x;
+	border: 1px solid #ccc;
+	color: #444;
+	font-size: 1em; 
+	font-weight: normal;
+	margin:1px; 
+	padding: 5px; 
+	overflow: visible; 
+	vertical-align: middle; 
+}
+.smallbutton, .smallselect, .smallinput {font-size: 10px; font-weight: normal;}
+.smallinput, .smallselect {background-image: none;}
+.smallbutton, .submitbutton {cursor: pointer;}
+
+#editorbg>td {background: #fff;}
+#editorbg td {color: #000;}
+
+#help, .help {margin-bottom:10px;padding:10px;background:#ffffcc;border:2px solid #dddb54;color: #000;line-height:1em;}
+#help ol {margin-top:3px;margin-bottom:3px;}
+#error, .error {background-color: #fbe3e4; border: 3px solid #FBC2C4; color: #BB0000;
+font-size: 11px; margin-bottom: 20px; padding: 5px;}
+#error ul, .error ul {margin:0px;margin-left:15px;padding:0px;}
+#success, .success {margin-bottom:10px;padding:10px;background-color:#E6EFC2;border:2px solid #C6D880;color:#529214}
+
+
+/*--------------------------------------------------
+------------------  Marquee Box  -------------------
+--------------------------------------------------*/
+ 
+#marquee, #sub_marquee, #sub_marquee img {
+	height: auto !important;  
+	max-width: 100% !important;
+	/* width: 100% !important; */
+	/* max-height: 400px !important; */
+	/* overflow: hidden !important; */
+}
+
+/*#marquee, #marquee-rotator-container, .br-screen {overflow: visible !important;}*/
+ 
+/*----- PREV & BACK BUTTONS -----*/
+ 
+.br-side-prev, .br-side-next {
+	display: block;
+	height: 50px; width: 50px; 
+	margin: 5px; 
+	position: absolute;
+	text-align: center;
+	text-indent: -9999px;
+	z-index: 11;
+}
+ 
+.br-side-prev {background:url(../images/marquee_controls.png) 0 -50px; top: 40%; left: 0px;}
+.br-side-next {background:url(../images/marquee_controls.png) -50px -50px; top:40%; right: 0px;}
+ 
+.br-side-prev:hover {background:url(../images/marquee_controls.png) 0 0;}
+.br-side-next:hover {background:url(../images/marquee_controls.png) -50px 0;}
+ 
+/*------ PAGINATION -----*/
+ 
+.br-thumbnails li.br-bullet {
+	background: url(../images/marquee_controls.png) -20px -100px; 
+	height: 15px; width: 15px;
+	margin: 3px;  /* --- keep margin even on both left and right --- */
+	text-align: center;
+}
+ 
+.br-thumbnails li.br-bullet:hover {background: url(../images/marquee_controls.png) -40px -100px;}
+.br-thumbnails li.br-curr {background: url(../images/marquee_controls.png) -80px -100px;}
+.br-thumbnails li.br-curr:hover {background: url(../images/marquee_controls.png) -60px -100px;}
+ 
+/* --- END Marquee Box --- */
+
+
+/*--------------------------------------------------
+------------- Sliding Panel --------------------
+--------------------------------------------------*/
+
+/***** clearfix *****/
+.clear {clear: both;height: 0;line-height: 0;}
+.clearfix:after {content: ".";display: block;height: 0;clear: both;visibility: hidden;}
+.clearfix {display: inline-block;}
+/* Hides from IE-mac \*/
+* html .clearfix {height: 1%;}
+.clearfix {display: block;}
+/* End hide from IE-mac */
+.clearfix {height: 1%;}
+.clearfix {display: block;}
+
+/* sliding panel */
+#toppanel {
+    position: absolute;   /*Panel will overlap  content */
+    position: relative;   /*Panel will "push" the content down */
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+}
+
+#panel {
+	background: #eee;
+	border-bottom: 5px solid #c7a85a;
+	color: #444;
+	display: none;
+	font-size: 12px;
+	height: auto;
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+	z-index: 9999;
+}
+
+#panel_content {color: #444; width: 940px; height: 250px; margin: 20px auto;}
+
+	#panel_content h2 {color: #444;.margin-top: 10px; line-height: 1.2em;}
+	#panel_content fieldset {border: 0; margin: 0 0 10px; padding: 0;}
+
+	#panel_module1 {
+		background: #fff;
+		border: 1px solid #ddd;
+		box-shadow: 0 0 5px rgba(0,0,0,.1);
+		width: 260px; height: 230px;
+		margin: 0 0 20px 0;
+		padding: 0 20px 20px;
+		position: absolute;
+		z-index: 9999;
+	}
+		#panel_module1 #sitestream_list {height: 180px; padding: 0; margin: 0; overflow: auto;}
+		#panel_module1 #sitestream_list li {list-style: none; padding: 5px;border-bottom:1px solid #ddd;}
+		#panel_module1 #sitestream_list li:hover {background:#ddd}
+		#panel_module1 #sitestream_list .list_row_number {display: none;}
+		#panel_module1 #sitestream_list .list_date3, #panel_module1 #sitestream_list .list_category2 {color:#444;}
+		#panel_module1 #sitestream_list .list_title {color:#444;}
+		#panel_module1 #sitestream_list li a {display:block;text-decoration:none;}
+
+		#panel_module1 #sitestream_list .list_date1, #panel_module1 #sitestream_list .list_date2, #panel_module1 #sitestream_list .list_date4, #panel_module1 #sitestream_list .list_date5, #panel_module1 #sitestream_list .list_date6, #panel_module1 #sitestream_list .list_time1, #panel_module1 #sitestream_list .list_category1 {display: none;}
+		
+		#stream_view_all {position: absolute; top: 20px; right: 20px;}
+			
+	#panel_module3 {
+		background: #fff;
+		border: 1px solid #ddd;
+		box-shadow: 0 0 5px rgba(0,0,0,.1);
+		width: 260px; height: 230px;
+		margin: 0 0 0 320px;
+		padding: 0 20px 20px;
+		position: absolute;
+	}
+	
+		.site_search {width: 260px;}
+		.site_search fieldset {border: none; margin: 0; padding: 0;}
+		.search_field {width: 150px;}
+		
+		.login_password {margin-bottom: 0;}
+		.login_submit {margin-bottom: 0;}
+	
+	#panel_module4 {
+		background: #fff;
+		border: 1px solid #ddd;
+		box-shadow: 0 0 5px rgba(0,0,0,.1);
+		width: 260px; height: 230px;
+		margin: 0 0 0 640px;
+		padding: 0 20px 20px;
+		position: absolute;
+	}
+	
+		#panel_module4 p {line-height: 1.25em;}
+
+/* Tab */
+
+#toggle_bar_container {background: url(../images/toggle_bar.jpg) repeat-x; height: 30px; width: auto;}
+#toggle_bar {background: url(../images/toggle_bar.jpg); height: 30px; margin: 0 auto; width: 900px;}
+#toggle {display: inline; float: right; height: 30px; width: 135px;}
+#open {background: url(../images/panel_open.png) no-repeat; display: block; height: 30px; width: 135px;}
+#close {background: url(../images/panel_close.png) no-repeat; display: block; height: 30px; width: 135px;}
