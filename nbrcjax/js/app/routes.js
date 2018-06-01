@@ -55,12 +55,26 @@
                  controller: 'aboutStaffSPController',
                  pageTitle: "New Berlin Road Church | Matthew Meadows, Senior Pastor"
              })
-             .state('app.worshipleader',
+             .state('app.chipmerkle',
             {
-                 url: '/about/worshipleader',
-                 templateUrl: 'js/app/templates/about/staff/karendavis.html',
-                 controller: 'aboutStaffWLController',
-                 pageTitle: "New Berlin Road Church | Karen Davis, Worship Leader"
+                 url: '/about/chipmerkle',
+                 templateUrl: 'js/app/templates/about/staff/chipmerkle.html',
+                 controller: 'aboutStaffCMController',
+                 pageTitle: "New Berlin Road Church | Chip Merkle"
+             })
+             .state('app.andyanderson',
+            {
+                 url: '/about/andyanderson',
+                 templateUrl: 'js/app/templates/about/staff/andyanderson.html',
+                 controller: 'aboutStaffCAAontroller',
+                 pageTitle: "New Berlin Road Church | Andy Anderson"
+             })
+             .state('app.bobcavender',
+            {
+                 url: '/about/bobcavender',
+                 templateUrl: 'js/app/templates/about/staff/bobcavender.html',
+                 controller: 'aboutStaffCBController',
+                 pageTitle: "New Berlin Road Church | Bob Cavender"
              })
              .state('app.visionteam',
             {

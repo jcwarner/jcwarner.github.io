@@ -27,6 +27,18 @@
     
     function aboutStaffController($scope, $http, $location, $window, $, $log, $controller) {
     	$controller('baseController', {$scope: $scope});
+    	$scope.elders = [
+    		{
+    			name:"Chip Merkle",
+    			bio:"Test Bio",
+    			image:""
+    		},
+    		{
+    			name:"Bob Cavender",
+    			bio:"Bob's Bio",
+    			image:""
+    		}
+    	];
 //    	$scope.nav.about();
     }
     
@@ -34,11 +46,16 @@
     	$controller('baseController', {$scope: $scope});
 //    	$scope.nav.about();
     }
-    function aboutStaffWLController($scope, $http, $location, $window, $, $log, $controller) {
+    function aboutStaffCMController($scope, $http, $location, $window, $, $log, $controller) {
     	$controller('baseController', {$scope: $scope});
 //    	$scope.nav.about();
     }
-    function aboutStaffVTController($scope, $http, $location, $window, $, $log, $controller) {
+    function aboutStaffAAController($scope, $http, $location, $window, $, $log, $controller) {
+    	$controller('baseController', {$scope: $scope});
+//    	$scope.nav.about();
+    }
+
+    function aboutStaffBCController($scope, $http, $location, $window, $, $log, $controller) {
     	$controller('baseController', {$scope: $scope});
 //    	$scope.nav.about();
     }

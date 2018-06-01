@@ -113,7 +113,7 @@ text-indent: -9999px;
 /* standard menu setup */
 .menu, .menu ul {z-index:1999; list-style-type:none; padding:0px; margin:0px; text-align:left; position:relative;}
 .menu {margin-left:0px;}
-.menu li {float:left;}
+.menu li {float:left; width: 18%}
 .menu ul li {clear:both; display:block;}
 .menu li ul {display:none;}
 .menu li:hover>ul {display:block; position:absolute;}
@@ -160,7 +160,16 @@ img.cssnavlevelone {border:none;}
 * html #navbar .navimg {display:none;}
 * html #navbar span {display:inline;}
 * html #navbar a.cssnavlevelone {overflow:visible; padding:0px 10px;}
+html #navbar a.cssnavlevelone {
+	font-weight: 500;
+	padding-top: 13px;
+	font-size: 16px;
+	color: darkgrey;	
+}
 
+html #navbar a.cssnavlevelone:hover,html #navbar a.cssnavlevelone.active {
+	color: #d4ab42;
+}
 
 /*---------- ie6 MAIN MENU hacks -----------*/
 * html .menu {display:inline-block;}

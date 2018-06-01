@@ -18,35 +18,35 @@
 
 		<script type="text/javascript">
 			$(document)
-					.ready(
-							function() {
-								var documentHeight = $(document).height();
-								$("html")
-										.append(
-												'<div class="back-to-top"><img style="width: 30px;" src="images/backtotop.png" /></div>');
-								$(".back-to-top").css({
-									"display" : "none",
-									"position" : "fixed",
-									"right" : "20px",
-									"bottom" : "20px",
-									"z-index" : "9999",
-									"padding" : "10px",
-									"cursor" : "pointer"
-								});
-								$(window).scroll(function() {
-									var scrollPos = $(window).scrollTop();
-									if (scrollPos > 300)
-										$(".back-to-top").fadeIn(150);
-									else
-										$(".back-to-top").fadeOut(150)
-								});
-								$(".back-to-top").click(function() {
-									$("html, body").animate({
-										scrollTop : 0
-									}, 500);
-									return false
-								})
-							});
+				.ready(
+					function() {
+						var documentHeight = $(document).height();
+						$("html")
+								.append(
+										'<div class="back-to-top"><img style="width: 30px;" src="images/backtotop.png" /></div>');
+						$(".back-to-top").css({
+							"display" : "none",
+							"position" : "fixed",
+							"right" : "20px",
+							"bottom" : "20px",
+							"z-index" : "9999",
+							"padding" : "10px",
+							"cursor" : "pointer"
+						});
+						$(window).scroll(function() {
+							var scrollPos = $(window).scrollTop();
+							if (scrollPos > 300)
+								$(".back-to-top").fadeIn(150);
+							else
+								$(".back-to-top").fadeOut(150)
+						});
+						$(".back-to-top").click(function() {
+							$("html, body").animate({
+								scrollTop : 0
+							}, 500);
+							return false
+						})
+					});
 		</script>
 
 		<meta property="og:site_name" content="New Berlin Road Church" />
@@ -135,19 +135,11 @@
 				<div id="info_bar">	
 					<div id="navbar">
 						<ul class="menu">
-							<li class="firstlevel first ">
-								<a ui-sref="app.home" ui-sref-active="active" class="cssnavlevelone first">
-									<img src="images/shim.gif" width="1" alt="" class="cssnavlevelone" />
-									<img class="navimg" src="images/Home.png" alt="Home" />
-									<span>Home</span>
-								</a>
+							<li class="firstlevel first " style="width:10%;">
+								<a ui-sref="app.home" ui-sref-active="active" class="cssnavlevelone first">Home</a>
 							</li>
 							<li class="firstlevel ">
-								<a ui-sref="app.about" ui-sref-active="active" class="x200 cssnavlevelone">
-									<img src="images/shim.gif"	width="1" alt="" class="cssnavlevelone" />
-									<img class="navimg"	src="images/About_NBRC.png" alt="About NBRC" />
-									<span>About NBRC</span> 
-								</a>
+								<a ui-sref="app.find" ui-sref-active="active" class="x200 cssnavlevelone">About NBRC</a>
 								<ul>
 									<li class=" first ">
 										<a ui-sref="app.find" ui-sref-active="active" class="x266">Times & Direction </a>
@@ -160,43 +152,17 @@
 									</li>
 								
 									<li class=" ">
-										<a ui-sref="app.staff" ui-sref-active="active" class="x309">Staff <b>&#187;</b></a>
-										<ul>
-											<li class=" first ">
-												<a ui-sref="app.seniorpastor" ui-sref-active="active" class="x311">Our Pastor </a>
-											</li>
-											<li class="last">
-												<a ui-sref="app.staff" ui-sref-active="active" class="x311">Our Elders</a>
-											</li>
-										</ul>
+										<a ui-sref="app.staff" ui-sref-active="active" class="x309">Staff</a>
+										
 									</li>								
 								</ul>
 							</li>
 							<li class="firstlevel ">
-								<a ui-sref="app.ministries" ui-sref-active="active" class="x148 cssnavlevelone">
-									<img src="images/shim.gif" width="1" alt="" class="cssnavlevelone" />
-									<img class="navimg" src="images/Our_Ministries.png" alt="Our Ministries" />
-									<span>Ministries</span> 
-								</a>
+								<a ui-sref="app.ministries" ui-sref-active="active" class="x148 cssnavlevelone">Ministries</a>
 								<ul>
 									<li class="first ">
-										<a ui-sref="app.women" ui-sref-active="active" class="x306">
-											Women's
-										</a>
-									</li>
-									<li class=" ">
-										<a ui-sref="app.men" ui-sref-active="active" class="x306">
-											Men's
-										</a>
-									</li>
-									<li class=" ">
-										<a ui-sref="app.couples" ui-sref-active="active" class="x306">
-											Couples
-										</a>
-									</li>
-									<li class=" ">
-										<a ui-sref="app.nursery" ui-sref-active="active" class="x306">
-											Nursery & Preschool
+										<a ui-sref="app.adult" ui-sref-active="active" class="x306">
+											Adult's
 										</a>
 									</li>
 									<li class=" ">
@@ -210,19 +176,15 @@
 										</a>
 									</li>
 									<li class="last ">
-										<a ui-sref="app.family" ui-sref-active="active" class="x306">
-											Family Small Groups
+										<a ui-sref="app.worship" ui-sref-active="active" class="x306">
+											Worship
 										</a>
 									</li>
 									
 								</ul>
 							</li>
 							<li class="firstlevel ">
-								<a ui-sref="app.resources" ui-sref-active="active" class="x148 cssnavlevelone">
-									<img src="images/shim.gif" width="1" alt="" class="cssnavlevelone" />
-									<img class="navimg" src="images/Resources.png" alt="Resources" />
-									<span>Resources</span> 
-								</a>
+								<a ui-sref="app.resources" ui-sref-active="active" class="x148 cssnavlevelone">Resources</a>
 								<ul>
 									<li class=" first ">
 										<a ui-sref="app.media" ui-sref-active="active" class="x266">Sermon Media </a>
@@ -231,23 +193,13 @@
 										<a ui-sref="app.recommended" ui-sref-active="active" class="x296">Recommended Books, Websites, Podcasts </a>
 									</li>
 									<li class=" ">
-										<a ui-sref="app.prayer" ui-sref-active="active" class="x296">Prayer Request </a>
+										<a ui-sref="app.contact" ui-sref-active="active" class="x296">Prayer Request </a>
 									</li>
 								</ul>
 							</li>
-							<li class="firstlevel">
-								<a ui-sref="app.giving" ui-sref-active="active" class="x150 cssnavlevelone">
-									<img src="images/shim.gif" width="1" alt="" class="cssnavlevelone" />
-									<img class="navimg" src="images/Giving.png" alt="Giving" />
-									<span>Giving</span> 
-								</a>
-							</li>
+							
 							<li class="firstlevel last">
-								<a ui-sref="app.calendar" ui-sref-active="active" class="x150 cssnavlevelone">
-									<img src="images/shim.gif" width="1" alt="" class="cssnavlevelone" />
-									<img class="navimg" src="images/Upcoming_Events.png" alt="Upcoming Events" />
-									<span>Calendar</span> 
-								</a>
+								<a ui-sref="app.calendar" ui-sref-active="active" class="x150 cssnavlevelone">Calendar</a>
 							</li>
 							<!--- <li class="firstlevel ">
 								<a href="javascript:void(null)" style="cursor: default;" class="x245 cssnavlevelone">
@@ -276,11 +228,7 @@
 								</a>
 							</li> -->
 							<li class="firstlevel last">
-								<a ui-sref="app.contact" ui-sref-active="active" class="x150 cssnavlevelone">
-									<img src="images/shim.gif" width="1" alt="" class="cssnavlevelone" />
-									<img class="navimg" src="images/Contact_NBRC.png" alt="Contact NBRC" />
-									<span>Contact NBRC</span> 
-								</a>
+								<a ui-sref="app.contact" ui-sref-active="active" class="x150 cssnavlevelone">Contact NBRC</a>
 							</li>	
 						</ul>
 					</div>
@@ -315,16 +263,6 @@
 					<li>
 						<a href="http://www.facebook.com/newberlinroadchurch" onclick="target='_blank'" class="social_facebook">
 							<img src="images/icon_facebook.png" alt="Facebook" />
-						</a>
-					</li>
-					<li>
-						<a href="http://www.twitter.com/newberlinroad" onclick="target='_blank'" class="social_twitter">
-							<img src="images/icon_twitter.png" alt="Twitter" />
-						</a>
-					</li>
-					<li>
-						<a href="http://www.youtube.com/user/NewBerlinRoadChurch" onclick="target='_blank'" class="social_youtube">
-							<img src="images/icon_youtube.png" alt="YouTube" />
 						</a>
 					</li>
 					<!-- <li>
